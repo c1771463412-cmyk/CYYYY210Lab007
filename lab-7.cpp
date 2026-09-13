@@ -6,7 +6,7 @@
 using namespace std;
 
 // Size of the array
-const int SIZE = 6;
+const int SIZE = 5;
 
 // Prototypes
 void displayArray(string *);
@@ -23,7 +23,7 @@ int main() {
     *(names + 2) = "Charlie";
     *(names + 3) = "David";
     *(names + 4) = "Eve";
-    *(names + 5) = "Frank";
+ 
     // Display the original array
     cout << "Original array: ";
     displayArray(names);
