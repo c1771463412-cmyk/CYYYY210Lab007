@@ -24,9 +24,19 @@ int main() {
     *(names + 3) = "David";
     *(names + 4) = "Eve";
 
+    // Display the original array
     cout << "Original array: ";
     displayArray(names);
     cout << endl;
+
+    // Reverse and display the reversed array
+    names = reverseArray(names);
+    cout << "Reversed array: ";
+    displayArray(names);
+    cout << endl;
+
+    // Deallocate the memory
+    delete [] names;
 
     return 0;
 }
@@ -39,3 +49,14 @@ void displayArray(string *arr) {
 }
 
 // Function to reverse the contents of the array
+string* reverseArray(string *arr) {
+    string temp;
+
+    for (int i = 0; i < SIZE / 2; i++) {
+        temp = *(arr + i);
+        *(arr + i) = *(arr + SIZE - 1 - i);
+        *(arr + SIZE - 1 - i) = temp;
+    }
+
+    return arr;
+}
